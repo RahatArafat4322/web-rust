@@ -8,7 +8,7 @@
 
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com https://*.googleusercontent.com; frame-src https://www.youtube.com; connect-src 'self' https://api.github.com https://www.googleapis.com; base-uri 'self'; form-action 'self'; object-src 'none';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com https://*.googleusercontent.com; frame-src https://www.youtube.com; connect-src 'self' https://www.googleapis.com; base-uri 'self'; form-action 'self'; object-src 'none';" />
 
   <meta property="og:title" content="Nextcircuit | Official Creator Hub" />
   <meta property="og:image" content="image_499882.png" />
@@ -38,6 +38,7 @@
   <!-- Trunk Asset & Rust WASM Directives -->
   <link data-trunk rel="css" href="style.css" />
   <link data-trunk rel="copy-file" href="software.json" />
+  <link data-trunk rel="copy-file" href="config.json" />
   <link data-trunk rel="copy-file" href="image_499882.png" />
   <link data-trunk rel="copy-file" href="youtube.png" />
   <link data-trunk rel="copy-file" href="github.png" />
