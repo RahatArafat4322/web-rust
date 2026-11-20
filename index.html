@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nextcircuit Official Creator Hub" />
+  <meta name="theme-color" content="#05070b" />
+
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com https://*.googleusercontent.com; frame-src https://www.youtube.com; connect-src 'self' https://api.github.com https://www.googleapis.com; base-uri 'self'; form-action 'self'; object-src 'none';" />
+
+  <meta property="og:title" content="Nextcircuit | Official Creator Hub" />
+  <meta property="og:image" content="image_499882.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <title>Nextcircuit | Official Creator Hub</title>
+
+  <style>
+    html, body {
+      background-color: #05070b;
+      color: #fafafa;
+      margin: 0;
+      padding: 0;
+    }
+    #bgParticles, .bg-grid-overlay, .ambient-orb {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Trunk Asset & Rust WASM Directives -->
+  <link data-trunk rel="css" href="style.css" />
+  <link data-trunk rel="copy-file" href="software.json" />
+  <link data-trunk rel="copy-file" href="image_499882.png" />
+  <link data-trunk rel="copy-file" href="youtube.png" />
+  <link data-trunk rel="copy-file" href="github.png" />
+  <link data-trunk rel="copy-file" href="windows.png" />
+  <link data-trunk rel="copy-file" href="linux.png" />
+  <link data-trunk rel="copy-file" href="android.png" />
+  <link data-trunk rel="copy-file" href="discord.png" />
+  <link data-trunk rel="copy-file" href="facebook.png" />
+  <link data-trunk rel="copy-file" href="linkedin.png" />
+  <link data-trunk rel="rust" data-wasm-opt="z" />
+</head>
+<body>
+
+  <!-- Animated Cyber-Circuit Grid, Floating Aurora Orbs & Interactive Constellation Canvas -->
+  <div class="bg-grid-overlay" aria-hidden="true"></div>
+  <div class="ambient-orb ambient-orb-1" aria-hidden="true"></div>
+  <div class="ambient-orb ambient-orb-2" aria-hidden="true"></div>
+  <div class="ambient-orb ambient-orb-3" aria-hidden="true"></div>
+  <canvas id="bgParticles" aria-hidden="true"></canvas>
+
+  <!-- Left Sidebar Navigation -->
+  <nav class="sidebar" aria-label="Main Navigation">
+    <header class="profile-box">
+      <div class="avatar-wrapper">
+        <div class="avatar" id="avatarContainer" aria-hidden="true"></div>
+      </div>
+      <h2 class="channel-name animated-gradient-text" id="displayChannelName">Nextcircuit</h2>
+      <div class="channel-handle">@next_circuit</div>
+      <div class="typewriter-line" aria-live="polite">
+        <span id="typewriterText">Embedded Systems &amp; PCB Design</span><span class="typewriter-cursor">|</span>
+      </div>
+      <p class="channel-bio">
+        Embedded systems, STM32, ESP32, Arduino tutorials &amp; hardware engineering projects.
+      </p>
+    </header>
+
+    <section class="sidebar-section">
+      <h3 class="section-label">Content</h3>
+      <div class="social-links">
+        <button type="button" class="social-btn nav-btn active" data-tab="youtube" id="nav-youtube">
+          <div class="social-btn-left">
+            <img src="youtube.png" alt="YouTube" class="icon-badge" />
+            <span class="nav-text truncate">YouTube Videos</span>
+          </div>
+        </button>
+        <button type="button" class="social-btn nav-btn" data-tab="github" id="nav-github">
+          <div class="social-btn-left">
+            <img src="github.png" alt="GitHub" class="icon-badge" />
+            <span class="nav-text truncate">GitHub Repositories</span>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <section class="sidebar-section">
+      <h3 class="section-label">Software Links</h3>
+      <div class="social-links">
+        <button type="button" class="social-btn nav-btn" data-tab="windows" id="nav-windows">
+          <div class="social-btn-left">
+            <img src="windows.png" alt="Windows" class="icon-badge" />
+            <span class="nav-text">Windows Software</span>
+          </div>
+        </button>
+        <button type="button" class="social-btn nav-btn" data-tab="linux" id="nav-linux">
+          <div class="social-btn-left">
+            <img src="linux.png" alt="Linux" class="icon-badge" />
+            <span class="nav-text">Linux Software</span>
+          </div>
+        </button>
+        <button type="button" class="social-btn nav-btn" data-tab="android" id="nav-android">
+          <div class="social-btn-left">
+            <img src="android.png" alt="Android" class="icon-badge" />
+            <span class="nav-text">Android Apps</span>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <section class="sidebar-section">
+      <h3 class="section-label">Social Media Links</h3>
+      <div class="social-links">
+        <a href="https://youtube.com/@next_circuit" target="_blank" rel="noopener noreferrer nofollow" class="social-btn nav-btn">
+          <div class="social-btn-left">
+            <img src="youtube.png" alt="YouTube" class="icon-badge" />
+            <span class="nav-text">YouTube</span>
+          </div>
+        </a>
+        <a href="https://github.com/RahatArafat4322" target="_blank" rel="noopener noreferrer nofollow" class="social-btn nav-btn">
+          <div class="social-btn-left">
+            <img src="github.png" alt="GitHub" class="icon-badge" />
+            <span class="nav-text">GitHub</span>
+          </div>
+        </a>
+        <button type="button" class="social-btn nav-btn" data-coming-soon="Discord">
+          <div class="social-btn-left">
+            <img src="discord.png" alt="Discord" class="icon-badge" />
+            <span class="nav-text">Discord</span>
+          </div>
+        </button>
+        <button type="button" class="social-btn nav-btn" data-coming-soon="Facebook">
+          <div class="social-btn-left">
+            <img src="facebook.png" alt="Facebook" class="icon-badge" />
+            <span class="nav-text">Facebook</span>
+          </div>
+        </button>
+        <button type="button" class="social-btn nav-btn" data-coming-soon="LinkedIn">
+          <div class="social-btn-left">
+            <img src="linkedin.png" alt="LinkedIn" class="icon-badge" />
+            <span class="nav-text">LinkedIn</span>
+          </div>
+        </button>
+      </div>
+    </section>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-content" id="mainContent">
+
+    <!-- YOUTUBE TAB VIEW -->
+    <div id="tab-youtube" class="view-section active">
+      <header class="top-bar">
+        <div class="page-title">
+          <h1 class="animated-title" data-text="Channel Videos">Channel Videos</h1>
+          <span class="count-badge" id="count-youtube">0</span>
+        </div>
+        <div class="controls">
+          <input type="text" id="searchInput" data-search-tab="youtube" placeholder="Search videos..." class="search-input" autocomplete="off">
+          <div class="custom-select-wrapper" style="width: 200px;">
+            <div class="custom-select" id="sortSelectTrigger" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="false">
+              <span id="sortModeDisplay">Sort: Most Viewed</span>
+              <span class="select-arrow">▼</span>
+            </div>
+            <div class="custom-options hidden" id="sortModeOptions" role="listbox">
+              <div class="custom-option" data-sort-val="views" data-sort-label="Sort: Most Viewed" role="option">Sort: Most Viewed</div>
+              <div class="custom-option" data-sort-val="newest" data-sort-label="Sort: Newest First" role="option">Sort: Newest First</div>
+            </div>
+            <input type="hidden" id="sortMode" value="views">
+          </div>
+        </div>
+      </header>
+
+      <!-- Topic Filter Chips -->
+      <div class="topic-filters" id="topicFilters" role="group" aria-label="Filter videos by topic">
+        <button type="button" class="topic-chip active" data-topic="all">All</button>
+        <button type="button" class="topic-chip" data-topic="stm32">STM32</button>
+        <button type="button" class="topic-chip" data-topic="esp32">ESP32</button>
+        <button type="button" class="topic-chip" data-topic="arduino">Arduino</button>
+        <button type="button" class="topic-chip" data-topic="pcb">PCB</button>
+      </div>
+
+      <section class="video-grid" id="videoGrid"></section>
+    </div>
+
+    <!-- GITHUB TAB VIEW -->
+    <div id="tab-github" class="view-section">
+      <header class="top-bar">
+        <div class="page-title">
+          <h1 class="animated-title" data-text="GitHub Repositories">GitHub Repositories</h1>
+          <span class="count-badge" id="count-github">0</span>
+        </div>
+        <div class="controls">
+          <input type="text" id="searchGithub" data-search-tab="github" placeholder="Search repositories..." class="search-input" autocomplete="off">
+        </div>
+      </header>
+      <section class="video-grid" id="githubGrid"></section>
+    </div>
+
+    <!-- WINDOWS SOFTWARE TAB VIEW -->
+    <div id="tab-windows" class="view-section">
+      <header class="top-bar">
+        <div class="page-title">
+          <h1 class="animated-title" data-text="Windows Software">Windows Software</h1>
+          <span class="count-badge" id="count-windows">0</span>
+        </div>
+        <div class="controls">
+          <input type="text" id="searchWindows" data-search-tab="windows" placeholder="Search Windows software..." class="search-input" autocomplete="off">
+        </div>
+      </header>
+      <section class="video-grid" id="grid-windows"></section>
+    </div>
+
+    <!-- LINUX SOFTWARE TAB VIEW -->
+    <div id="tab-linux" class="view-section">
+      <header class="top-bar">
+        <div class="page-title">
+          <h1 class="animated-title" data-text="Linux Software">Linux Software</h1>
+          <span class="count-badge" id="count-linux">0</span>
+        </div>
+        <div class="controls">
+          <input type="text" id="searchLinux" data-search-tab="linux" placeholder="Search Linux software..." class="search-input" autocomplete="off">
+        </div>
+      </header>
+      <section class="video-grid" id="grid-linux"></section>
+    </div>
+
+    <!-- ANDROID APPS TAB VIEW -->
+    <div id="tab-android" class="view-section">
+      <header class="top-bar">
+        <div class="page-title">
+          <h1 class="animated-title" data-text="Android Apps">Android Apps</h1>
+          <span class="count-badge" id="count-android">0</span>
+        </div>
+        <div class="controls">
+          <input type="text" id="searchAndroid" data-search-tab="android" placeholder="Search Android apps..." class="search-input" autocomplete="off">
+        </div>
+      </header>
+      <section class="video-grid" id="grid-android"></section>
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div class="toast-banner" id="toastBanner" role="status" aria-live="polite"></div>
+
+  <!-- Video Player Modal -->
+  <div class="modal-overlay" id="playerModal">
+    <div class="player-modal" id="playerModalBox">
+      <header class="player-header">
+        <strong id="playerTitle" class="player-title truncate">Now Playing</strong>
+        <button type="button" class="close-btn" id="closeModalBtn">✕ Close</button>
+      </header>
+      <div class="iframe-wrap">
+        <iframe id="youtubeIframe" src="" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="YouTube Video Player"></iframe>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

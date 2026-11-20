@@ -1,0 +1,60 @@
+[package]
+name = "nextcircuit-hub"
+version = "1.0.0"
+edition = "2021"
+description = "Nextcircuit Official Creator Hub built in Rust + WebAssembly"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[dependencies.web-sys]
+version = "0.3"
+features = [
+  "Window",
+  "Document",
+  "Element",
+  "HtmlElement",
+  "HtmlInputElement",
+  "HtmlIFrameElement",
+  "HtmlImageElement",
+  "HtmlCanvasElement",
+  "CanvasRenderingContext2d",
+  "CanvasGradient",
+  "DomTokenList",
+  "NodeList",
+  "Event",
+  "EventTarget",
+  "MouseEvent",
+  "TouchEvent",
+  "TouchList",
+  "Touch",
+  "KeyboardEvent",
+  "Location",
+  "History",
+  "Storage",
+  "Navigator",
+  "Clipboard",
+  "Headers",
+  "Request",
+  "RequestInit",
+  "RequestMode",
+  "RequestCredentials",
+  "Response",
+  "CssStyleDeclaration",
+  "DomRect",
+  "MediaQueryList",
+  "console",
+]
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
